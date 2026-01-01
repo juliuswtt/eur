@@ -1,0 +1,25 @@
+﻿// Node.js Backend Code (Auszug)
+const { Connection, Keypair, Transaction, SystemProgram, LAMPORTS_PER_SOL, PublicKey } = require('@solana/web3.js');
+
+
+// Dein Master Private Key (Niemals öffentlich machen!)
+const secretKey = Uint8Array.from([/* Deine 64 Zahlen vom Secret Key */]);
+const masterWallet = Keypair.fromSecretKey(secretKey);
+
+
+app.post('/api/payout', async (req, res) => {
+  const { targetAddress, amount } = req.body;
+  const connection = new Connection("https://api.mainnet-beta.solana.com");
+  
+  const transaction = new Transaction().add(
+    SystemProgram.transfer({
+      fromPubkey: masterWallet.publicKey,
+      toPubkey: new PublicKey(targetAddress),
+      lamports: amount * LAMPORTS_PER_SOL,
+    })
+  );
+
+
+  const signature = await connection.sendTransaction(transaction, [masterWallet]);
+  res.json({ success: true, txid: signature });
+});
