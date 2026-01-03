@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <title>Euras | Real Crypto PvP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'neon-green': '#10B981',
+              'neon-red': '#F43F5E',
+              'neon-blue': '#3B82F6',
+              'deep-black': '#0F172A',
+              'card-bg': '#1E293B',
+              'fox-orange': '#F59E0B',
+              'fox-hover': '#D97706',
+              'brand-purple': '#8B5CF6',
+            },
+            boxShadow: {
+              'pop-green': '0 4px 0 #059669',
+              'pop-blue': '0 4px 0 #2563EB',
+              'pop-orange': '0 4px 0 #D97706',
+              'pop-red': '0 4px 0 #E11D48',
+              'card-depth': '0 10px 15px -3px rgba(0, 0, 0, 0.3)',
+              'neon-glow': '0 0 20px rgba(16, 185, 129, 0.3)',
+            },
+            animation: {
+              'shake': 'shake 0.5s cubic-bezier(.36,.07,.19,.97) both',
+              'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'float': 'float 3s ease-in-out infinite',
+            },
+            keyframes: {
+              shake: {
+                '10%, 90%': { transform: 'translate3d(-1px, 0, 0)' },
+                '20%, 80%': { transform: 'translate3d(2px, 0, 0)' },
+                '30%, 50%, 70%': { transform: 'translate3d(-4px, 0, 0)' },
+                '40%, 60%': { transform: 'translate3d(4px, 0, 0)' }
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-5px)' }
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        background-color: #0F172A;
+        color: #F8FAFC;
+        font-family: 'Inter', system-ui, sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      ::-webkit-scrollbar { width: 8px; }
+      ::-webkit-scrollbar-track { background: #1E293B; }
+      ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+      ::-webkit-scrollbar-thumb:hover { background: #64748B; }
+      .btn-tactile { transition: all 0.1s; }
+      .btn-tactile:active { transform: translateY(2px); box-shadow: none !important; }
+      .neon-text-green { text-shadow: 0 0 10px #10B981; }
+      .neon-text-orange { text-shadow: 0 0 10px #F59E0B; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react-dom": "https://esm.sh/react-dom@18.3.1",
+    "react-dom/client": "https://esm.sh/react-dom@18.3.1/client",
+    "react/jsx-runtime": "https://esm.sh/react@18.3.1/jsx-runtime",
+    "lucide-react": "https://esm.sh/lucide-react@0.462.0?external=react",
+    "@solana/web3.js": "https://esm.sh/@solana/web3.js@1.95.8",
+    "firebase/app": "https://esm.sh/firebase@11.1.0/app",
+    "firebase/firestore": "https://esm.sh/firebase@11.1.0/firestore",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "firebase/": "https://esm.sh/firebase@^12.7.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
